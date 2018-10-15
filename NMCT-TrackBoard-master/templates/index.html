@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block home %}
+class="current"
+{% endblock %}
+
+{#Title#}
+{% block title %}
+TrackBoard - Home
+{% endblock %}
+
+{% block bodyWidth %}
+    <div class="bgimg-1">
+    <div class="caption">
+    <span class="border">TRACKBOARD</span><br>
+    <span class="border">ANALYSE YOUR DATA</span>
+    </div>
+    </div>
+    <style>body, html {  height: 100%;  }</style>
+{% endblock %}
+
+{#Body#}
+{% block body %}
+    <div class="wrapper">
+    <h1> HOW IT WORKS:</h1>
+        {{ macro.build_figure("step1.jpg", "Apply trackboard")}}
+        {{ macro.build_figure("step2.jpg", "Start skating")}}
+        {{ macro.build_figure("step3.jpg", "Analyze your data")}}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div id="indexfooter"><a href="http://student.howest.be/gaetan.van.den.ber1/portfolio"> &copy; 2017 Gaetan Van Den Berge</a></div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block statistics %}
+class="current"
+{% endblock %}
+
+{#Title#}
+{% block title %}
+TrackBoard - Sessions
+{% endblock %}
+
+{#Body#}
+{% block body %}
+    <div class="sessions">
+<h1> Sessions</h1>
+    <table>
+    <thead>
+    <tr>
+        <th>Session</th>
+        <th>Date</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ses in sessionList %}
+    <tr>
+        {{ macro.build_table(ses[0], ses[1], ses[2], ses[3])}}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ macro.footer() }}
+{% endblock %}

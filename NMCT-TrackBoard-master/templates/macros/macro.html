@@ -1,0 +1,43 @@
+{% macro build_figure(file,naam) %}
+    <figure>
+        <img src="{{ url_for("static",filename="images/" + file) }}"
+             alt="{{ naam }}">
+        <figcaption><p>{{ naam }}</p></figcaption>
+    </figure>
+{% endmacro %}
+
+{# ----------------------------------------------------#}
+
+{% macro build_table(session,date, startTime, endTime) %}
+    <td><a href="{{ url_for("sessiondetail", sessionID=session)}}"><div style="height: 100%;width:100%">{{ session }}</div></a></td>
+    <td><a href="{{ url_for("sessiondetail", sessionID=session)}}"><div style="height: 100%;width:100%">{{ date }}</div></a></td>
+    <td><a href="{{ url_for("sessiondetail", sessionID=session)}}"><div style="height: 100%;width:100%">{{ startTime }}</div></a></td>
+    <td><a href="{{ url_for("sessiondetail", sessionID=session)}}"><div style="height: 100%;width:100%">{{ endTime }}</div></a></td>
+    <td><a href="{{ url_for("sessiondetail", sessionID=session)}}"><div style="height: 100%;width:100%"><img src="{{ url_for("static",filename="images/eye.png") }}"></div></a></td>
+{% endmacro %}
+
+{% macro box(title, description, colorCode, image) %}
+    <div class="box" style="background-color: {{ colorCode }};)">
+        <h1>{{ title }}</h1>
+        <h2>{{ description }}</h2>
+        <img src="{{ url_for("static",filename="images/" + image) }}">
+    </div>
+{% endmacro %}
+
+{% macro box2(title, description, colorCode, image) %}
+    <div class="box2" style="background-color: {{ colorCode }};)">
+    <div class="float-left">
+        <img src="{{ url_for("static",filename="images/" + image) }}">
+    </div>
+    <div class="float-right">
+        <h2>{{ description }}</h2>
+        <h1>{{ title }}</h1>
+    </div>
+    </div>
+{% endmacro %}
+
+{% macro footer() %}
+    <footer>
+        <a href="http://student.howest.be/gaetan.van.den.ber1/portfolio"> &copy; 2017 Gaetan Van Den Berge</a>
+    </footer>
+{% endmacro %}
